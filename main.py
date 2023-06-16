@@ -189,6 +189,9 @@ for ind in tqdm(range(100)):
 
     val_MSE.append(np.mean(np.array(temp)))
 
-plt.plot(range(100), np.array(MSE).reshape((-1, 1)))
-plt.plot(range(100), np.array(val_MSE).reshape(-1, 1))
+plt.plot(range(100), np.array(MSE).reshape((-1, 1)), label='Training Loss')
+plt.plot(range(100), np.array(val_MSE).reshape(-1, 1), label='Validation Loss')
+plt.grid()
+plt.legend()
+plt.title('MSE')
 plt.show()
